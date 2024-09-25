@@ -1,7 +1,13 @@
 function updateColorFromRGB() {
-	const r = parseInt(document.querySelector('.rect-r').value) || 0;
-	const g = parseInt(document.querySelector('.rect-g').value) || 0;
-	const b = parseInt(document.querySelector('.rect-b').value) || 0;
+	const r = Math.max(0, Math.min(255, parseInt(document.querySelector('.rect-r').value) || 0));
+	const g = Math.max(0, Math.min(255, parseInt(document.querySelector('.rect-g').value) || 0));
+	const b = Math.max(0, Math.min(255, parseInt(document.querySelector('.rect-b').value) || 0));
+
+	if (r !== parseInt(document.querySelector('.rect-r').value) ||
+		g !== parseInt(document.querySelector('.rect-g').value) ||
+		b !== parseInt(document.querySelector('.rect-b').value)) {
+		showWarning('RGB значения были обрезаны до диапазона [0, 255]');
+	}
 
 	const colorDisplay = document.querySelector('.color-display');
 	colorDisplay.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
@@ -14,10 +20,17 @@ function updateColorFromRGB() {
 }
 
 function updateColorFromCMYK() {
-	const c = parseFloat(document.querySelector('.rect-c').value) || 0;
-	const m = parseFloat(document.querySelector('.rect-m').value) || 0;
-	const y = parseFloat(document.querySelector('.rect-y').value) || 0;
-	const k = parseFloat(document.querySelector('.rect-k').value) || 0;
+	const c = Math.max(0, Math.min(1, parseFloat(document.querySelector('.rect-c').value) || 0));
+	const m = Math.max(0, Math.min(1, parseFloat(document.querySelector('.rect-m').value) || 0));
+	const y = Math.max(0, Math.min(1, parseFloat(document.querySelector('.rect-y').value) || 0));
+	const k = Math.max(0, Math.min(1, parseFloat(document.querySelector('.rect-k').value) || 0));
+
+	if (c !== parseFloat(document.querySelector('.rect-c').value) ||
+		m !== parseFloat(document.querySelector('.rect-m').value) ||
+		y !== parseFloat(document.querySelector('.rect-y').value) ||
+		k !== parseFloat(document.querySelector('.rect-k').value)) {
+		showWarning('CMYK значения были обрезаны до диапазона [0, 1]');
+	}
 
 	const rgb = cmykToRgb(c, m, y, k);
 	updateRGBFields(rgb.r, rgb.g, rgb.b);
@@ -27,9 +40,15 @@ function updateColorFromCMYK() {
 }
 
 function updateColorFromLab() {
-	const l = parseFloat(document.querySelector('.rect-l').value) || 0;
-	const a = parseFloat(document.querySelector('.rect-a').value) || 0;
-	const b = parseFloat(document.querySelector('.rect-bb').value) || 0;
+	const l = Math.max(0, Math.min(100, parseFloat(document.querySelector('.rect-l').value) || 0));
+	const a = Math.max(-128, Math.min(127, parseFloat(document.querySelector('.rect-a').value) || 0));
+	const b = Math.max(-128, Math.min(127, parseFloat(document.querySelector('.rect-bb').value) || 0));
+
+	if (l !== parseFloat(document.querySelector('.rect-l').value) ||
+		a !== parseFloat(document.querySelector('.rect-a').value) ||
+		b !== parseFloat(document.querySelector('.rect-bb').value)) {
+		showWarning('Lab значения были обрезаны до допустимого диапазона');
+	}
 
 	const rgb = labToRgb(l, a, b);
 	updateRGBFields(rgb.r, rgb.g, rgb.b);
@@ -285,3 +304,14 @@ function validateInput(inputElement) {
 document.querySelectorAll('input[type="number"]').forEach((inputElement) => {
 	inputElement.addEventListener('input', () => validateInput(inputElement));
 });
+
+function showWarning(message) {
+	const warningElement = document.querySelector('.warning-message');
+	if (warningElement) {
+		warningElement.textContent = message;
+		warningElement.style.display = 'block';
+		setTimeout(() => {
+			warningElement.style.display = 'none';
+		}, 3000);
+	}
+}

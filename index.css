@@ -61,7 +61,7 @@ h2 {
 }
 
 input[type="number"] {
-    width: 60px;
+    width: 65px;
     margin-right: 10px;
     padding: 5px;
     border: 1px solid #ccc;
@@ -82,11 +82,12 @@ input[type="range"] {
 }
 
 .color-display {
-    height: 550px;
-    width: 550px;
+    height: 500px;
+    width: 500px;
     border: 1px solid #ccc;
     border-radius: 3px;
     margin-bottom: 15px;
+    margin-left: 14px;
 }
 
 .color-values p {
