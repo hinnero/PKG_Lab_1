@@ -10,7 +10,7 @@
   - Ползунки для изменения значений каждого цвета.
   - Поля ввода для ручного ввода числовых значений (от 0 до 255).
   - Изменение любого параметра RGB автоматически обновляет значения в моделях CMYK и Lab.
-![RGB](https://raw.githubusercontent.com/hinnero/PKG_Lab_1/6f2c74d6cae1378e7f8e9f05c42857602323c5ff/roll.png)
+![RGB](https://github.com/hinnero/PKG_Lab_1/raw/assets/roll.png)
 
 ### CMYK (Cyan, Magenta, Yellow, Key (Black))
 - Эта модель описывает цвета через синий (Cyan), пурпурный (Magenta), желтый (Yellow) и черный (Key).
