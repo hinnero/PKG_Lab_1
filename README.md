@@ -18,20 +18,20 @@
   - Ползунки для изменения значений CMYK.
   - Поля для ввода чисел вручную (от 0 до 1).
   - При изменении CMYK соответствующие цвета в RGB и Lab обновляются автоматически.
-![CMYK](https://raw.githubusercontent.com/hinnero/PKG_Lab_1/6f2c74d6cae1378e7f8e9f05c42857602323c5ff/cmyk.png)
+![CMYK](https://github.com/hinnero/PKG_Lab_1/raw/assets/cmyk.png)
 
 ### Lab (Lightness, A (green-red), B (blue-yellow))
 - Модель Lab включает яркость (Lightness) и двухкомпонентное цветовое пространство: A (зелено-красное) и B (сине-желтое).
 - Интерфейс:
   - Ползунки и поля для изменения значений яркости (от 0 до 100) и компонентов A и B (от -128 до 127).
   - Значения обновляются в других моделях автоматически.
-![LAB](https://raw.githubusercontent.com/hinnero/PKG_Lab_1/6f2c74d6cae1378e7f8e9f05c42857602323c5ff/lab.png)
+![LAB](https://github.com/hinnero/PKG_Lab_1/raw/assets/lab.png)
 
 ## Палитра цветов
 - Приложение содержит палитру предустановленных цветов.
 - Нажмите на цвет в палитре, чтобы автоматически выбрать его, и соответствующие значения RGB, CMYK и Lab будут обновлены.
-![Palette](https://raw.githubusercontent.com/hinnero/PKG_Lab_1/6f2c74d6cae1378e7f8e9f05c42857602323c5ff/palette.png)
-![Colours](https://raw.githubusercontent.com/hinnero/PKG_Lab_1/6f2c74d6cae1378e7f8e9f05c42857602323c5ff/colours.png)
+![Palette](https://github.com/hinnero/PKG_Lab_1/raw/assets/palette.png)
+![Colours](https://github.com/hinnero/PKG_Lab_1/raw/assets/colours.png)
 
 ## Инструкции по работе
 
